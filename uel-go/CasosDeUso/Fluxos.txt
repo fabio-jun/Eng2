@@ -1,0 +1,100 @@
+Caso de uso – Buscar local
+1.	Descrição: busca um local no mapa
+2.	Atores: usuário
+3.	Pré-condições: -
+4.	Trigger: clicar na barra de pesquisa
+5.	Fluxos:
+    Básico:
+    1. Usuário digita local na barra de busca;
+    2. Sistema procura local;
+    3. Sistema coloca um PIN no local;
+    4. Sistema mostra a janela com dos dados do local;
+    5. Usuário visualiza local;
+
+    Alternativo I (fluxo alternativo do item 1):
+    1. Usuário clica em um local do mapa;
+        1.1. Sistema busca o local baseado na proximidade;
+ 	1.2. Sistema coloca um PIN no local mais próximo;
+        1.3. Volta ao fluxo principal 3;
+
+    Alternativo II (fluxo alternativo do item 1):
+    1. Usuário busca locais por categoria;
+        1.1. Sistema mostra locais da categoria escolhida;
+    2. Usuário seleciona o lugar desejado;
+        2.1. Vai para o fluxo alternativo 2, passo 1.1;
+
+    Alternativo III (fluxo alternativo do item 1):
+    1. Usuário clica para mostrar os locais salvos;
+    	1.1. Sistema mostra locais salvos;
+    2. Usuário seleciona local desejado;
+	2.1. Vai para o fluxo básico, passo 2; 
+
+    Alternativo IV (fluxo alternativo do item 2):
+    5. Vai para caso de uso gerar rota;
+
+   
+
+6.Pós-condições: -
+
+Caso de uso – Salvar ponto
+1.	Descrição: salva um ponto do mapa
+2.	Atores: usuário
+3.	Pré-condições: Ter um local selecionado/buscado
+4.	Trigger: Clicar no icone de salvamento
+5.	Fluxos:
+    Básico:
+    1. Usuário clica no botao de favoritar;
+    2. Sistema adiciona ponto na lista de favoritos;
+
+6.Pós-condições: salvar nos favoritos
+
+Caso de uso – Gerar rota
+1.	Descrição: gera a rota para o local selecionado
+2.	Atores: sistema
+3.	Pré-condições: Ter um local selecionado/buscado
+4.	Trigger: Clicar no icone de gerar rota
+5.	Fluxos:
+    Básico:
+    1. Usuário clica no botao de gerar rota;
+    2. Sistema gera rota para local escolhido;
+
+6.Pós-condições: a rota eh mostrada no mapa
+
+Caso de uso - Mostrar favoritos
+1.	Descricao: Mostra os locais favoritos
+2. 	Atores: Usuario
+3.	Pre-condicoes: -
+4.	Trigger: Clicar no icone da lista dos favoritos
+5.	Fluxos:
+    Basico:
+    1. Usuario clica no icone de lista dos favoritos
+    2. Sistema mostra os locais favoritos
+
+    Fluxo alternativo 1:
+    1. Ususario realiza uma busca por local
+    	1.1 Vai para o fluxo basico, passo 1
+
+    Fluxo alternativo 2:
+    1. Usuario realiza uma busca por categoria
+	1.1. Vai para o fluxo basico, passo 1
+
+    Fluxo alternativo 3:
+    1. Usuario gera uma rota
+	1.1. Vai para o fluo basico, passo 1
+
+    Fluxo alternativo 4:
+    1. Usuario salva um local
+	1.1. Vai para o fluxo basico, passo 1
+
+Caso de uso - Pesquisa Google
+1.	Descricao: Realiza a pesquisa de um local nao encontrado no google
+2. 	Atores: sistema
+3.	Pre-condicoes: Busca por local ter falhado
+4.	Trigger: Buscar um local, nao existente
+5.	Fluxos:
+    Fluxo basico:
+    1. Buscar por um local nao existente
+    2. Sistema retorna um popup, informando que o local nao foi encontrado
+    3. Usuario clica no botao para pesquisar no google
+    4. O sistema abre uma nova guia, pesquisando o local no google
+
